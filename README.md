@@ -1,2 +1,12 @@
 # http-server
-simple http server for debugging no `x intall http-server`, its just ./http-server
+http server for web debugging or file hosting
+```bash
+python2 -m SimpleHttpServer
+```
+
+to
+
+```bash
+ ./http-server -b :9090
+
+```
