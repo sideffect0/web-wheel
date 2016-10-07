@@ -1,12 +1,12 @@
-# http-server
-http server for web debugging or file hosting
+# dev-server
+simple server for file serving or testing your html websites
+without no *** install http-server `sideffect`
 ```bash
-python2 -m SimpleHttpServer
-```
-
-to
-
-```bash
- ./http-server -b :9090
-
+ Usage of dev-server :  
+  -dir string  
+    	Directory location to files (default ".")  
+  -host string  
+    	Server host to listen (default "localhost")  
+  -port string
+    	Server port (default "5656")  
 ```
