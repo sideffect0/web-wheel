@@ -1,6 +1,6 @@
 # dev-server
 simple server for file serving or testing your html websites
-without no *** install http-server `sideffect`
+with no *** install http-server `sideffect`
 ```bash
  Usage of dev-server :  
   -dir string  
