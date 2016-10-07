@@ -1,0 +1,17 @@
+language: go
+go:
+  - 1.6
+script:
+  - GOOS=linux go build -ldflags "-s -w" -o dists/linux/dev-server http-server
+  - GOOS=darwin go build -ldflags "-s -w" -o dists/osx/dev-server http-server
+  - GOOS=windows go build -ldflags "-s -w" -o  dists/windows/dev-server.exe http-server
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file:
+    - dists/linux/dev-server
+    - dists/osx/dev-server
+    - dists/windows/dev-server.exe
+  skip_cleanup: true
+  on:
+    tags: true
