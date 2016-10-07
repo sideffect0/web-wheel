@@ -3,15 +3,18 @@ go:
   - 1.6
 script:
   - GOOS=linux go build -ldflags "-s -w" -o dists/linux/dev-server
+  - tar zcvf dists/linux/dev-server dists/dev-server-linux.tar.gz
   - GOOS=darwin go build -ldflags "-s -w" -o dists/osx/dev-server
+  - tar zcvf dists/osx/dev-server dists/dev-server-darwin.tar.gz 
   - GOOS=windows go build -ldflags "-s -w" -o  dists/windows/dev-server.exe
+  - tar zcvf dists/windows/dev-server.exe dists/dev-server-windows.tar.gz
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file:
-    - dists/linux/dev-server
-    - dists/osx/dev-server
-    - dists/windows/dev-server.exe
+    - dists/dev-server-linux.tar.gz
+    - dists/dev-server-darwin.tar.gz
+    - dists/dev-server-windows.tar.gz
   skip_cleanup: true
   on:
     tags: true
