@@ -6,7 +6,7 @@ without no *** install http-server `sideffect`
   -dir string  
     	Directory location to files (default ".")  
   -host string  
-    	Server host to listen (default "localhost")  
+    	Server host to listen (default "0.0.0.0")  
   -port string
     	Server port (default "5656")  
 ```

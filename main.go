@@ -6,7 +6,7 @@ import "fmt"
 
 func main() {
     
-    host := flag.String("host", "localhost", "Server host to listen")
+    host := flag.String("host", "0.0.0.0", "Server host to listen")
     port := flag.String("port", "5656", "Server port")
     dir  := flag.String("dir", ".", "Directory location to files")
     flag.Parse()
