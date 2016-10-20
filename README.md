@@ -10,3 +10,6 @@ with no *** install http-server `sideffect`
   -port string
     	Server port (default "5656")  
 ```
+## Installation
+download platform specific binaries from https://github.com/sideffect0/dev-server/releases/  
+will add installation instruction for platform specific other package managers
