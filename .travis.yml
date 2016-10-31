@@ -2,7 +2,7 @@ language: go
 go:
   - 1.6
 script:
-  - make all
+  - make release
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN

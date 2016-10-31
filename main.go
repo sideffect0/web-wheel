@@ -6,7 +6,8 @@ import "flag"
 import "log"
 
 func withAvailableHost(bind string, http_serve func(free_bind string)) {
-	if BindAvailable(bind) {
+        available, _ := BindAvailable(bind) // discard err handle now
+	if  available {
 		http_serve(bind)
 	} else if Confirm() {
 		// call with free ports

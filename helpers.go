@@ -25,12 +25,16 @@ func GetFreeBind() (free_bind string) {
 
 func BindAvailable(bind string) (status bool, err error) {
 
-	tester, err := net.Listen("tcp", host)
+	tester, err := net.Listen("tcp", bind)
 	// port not available with given bind
 	if err != nil {
 		return false, err
 	}
 	// free up for dev-server
-	server.Close()
+	tester.Close()
 	return true, nil
+}
+
+func Confirm() (status bool) {
+	return
 }
