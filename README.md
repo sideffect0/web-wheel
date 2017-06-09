@@ -1,6 +1,6 @@
 # dev-server
 simple server for file serving or testing your html websites
-with no *** install http-server `sideffect`
+
 ```bash
  Usage of dev-server :  
   -dir string  
@@ -11,5 +11,5 @@ with no *** install http-server `sideffect`
     	Server port (default "5656")  
 ```
 ## Installation
-download platform specific binaries from https://github.com/sideffect0/dev-server/releases/  
+download platform specific binaries from https://github.com/sideffect0/web-wheel/releases/  
 will add installation instruction for platform specific other package managers
