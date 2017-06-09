@@ -2,6 +2,7 @@ package main
 
 import "net"
 import "strings"
+import "log"
 
 func GetAddrs() (addrs []string, err error) {
 	addr_list, err := net.InterfaceAddrs()
@@ -20,7 +21,18 @@ func GetAddrs() (addrs []string, err error) {
 }
 
 func GetFreeBind() (free_bind string) {
-	return
+
+	addr, err := net.ResolveTCPAddr("tcp", "localhost:0")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	l, err := net.ListenTCP("tcp", addr)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer l.Close()
+	return l.Addr()
 }
 
 func BindAvailable(bind string) (status bool, err error) {
